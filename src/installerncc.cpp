@@ -402,7 +402,7 @@ IPluginInstaller::EInstallResult InstallerNCC::install(GuessedValue<QString> &mo
   }
   modInterface->setInstallationFile(QFileInfo(archiveName).fileName());
   modInterface->setVersion(version);
-  modInterface->setNexusID(modID);
+  modInterface->setRepoModID(modID);
 
   EInstallResult res = invokeNCC(modInterface, archiveName);
 
@@ -424,7 +424,7 @@ IPluginInstaller::EInstallResult InstallerNCC::install(GuessedValue<QString> &mo
           modInterface->setVersion(data.at(1));
         }
         if (data.at(2).length() > 0) {
-          modInterface->setNexusID(data.at(2).toInt());
+          modInterface->setRepoModID(data.at(2).toInt());
         }
       }
     }
